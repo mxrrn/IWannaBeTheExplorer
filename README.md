@@ -12,7 +12,7 @@ for the university course *Informatik Werkstatt*.
 - Double jump, three lives per run and checkpoints
 - Coins to collect. If you run out of lives, you can buy an extra life for 2 coins
 - Shooting in the boss level and in some other levels
-- Pause menu, music mute button, sound effects and menus for controls and about
+- Pause menu, music mute button, sound effects and a controls menu
 
 ## Controls
 

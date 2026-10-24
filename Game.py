@@ -42,14 +42,11 @@ font = pygame.font.Font(pygame.font.get_default_font(), 25)
 player = Player(1000, 80)
 player_lives = 3           # we are going to need this variable later to check if the value of player.lives has changed
 main_menu = Menu(0, 0, 'main_menu.png')
-about_menu = Menu(0, 0, "about_menu.jpg")
 controls_menu = Menu(0,0, "controls_menu.jpg")
-about_menu.activ = False
 controls_menu.activ = False
 start_button = Button('PLAY GAME', font, (50, 600), (205, 70))
 exit_button = Button('EXIT GAME', font, (50, 700), (205, 70))
-about_button = Button('ABOUT', font, (300, 600), (205, 70))
-controls_button = Button('CONTROLS', font, (300, 700), (205, 70))
+controls_button = Button('CONTROLS', font, (300, 600), (205, 70))
 back_Button = Button2('Back Button.png', 0, 0, (80,40))
 
 pause_screen = Menu(0, 0, 'background0.png')   # creating a Pause screen from the Menu class
@@ -125,20 +122,12 @@ while True:
         if exit_button.draw(screen):
             pygame.quit()
             exit()
-        if not controls_menu.activ:
-            if about_button.draw(screen):
-                about_menu.activ = True
-            if about_menu.activ:
-                about_menu.draw(screen)
-                if back_Button.draw(screen):
-                    about_menu.activ = False
-        if not about_menu.activ:                    # whithout this check, the controls button would be drawn when we are in about menu
-            if controls_button.draw(screen):
-                controls_menu.activ = True
-            if controls_menu.activ:
-                controls_menu.draw(screen)
-                if back_Button.draw(screen):
-                    controls_menu.activ = False
+        if controls_button.draw(screen):
+            controls_menu.activ = True
+        if controls_menu.activ:
+            controls_menu.draw(screen)
+            if back_Button.draw(screen):
+                controls_menu.activ = False
 
     else:
         '''drawing current level when the start button clicked and main menu not activ'''
